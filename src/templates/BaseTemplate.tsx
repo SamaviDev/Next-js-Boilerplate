@@ -1,5 +1,3 @@
-import { useTranslations } from 'next-intl';
-
 import { AppConfig } from '@/utils/AppConfig';
 
 const BaseTemplate = (props: {
@@ -7,8 +5,6 @@ const BaseTemplate = (props: {
   rightNav?: React.ReactNode;
   children: React.ReactNode;
 }) => {
-  const t = useTranslations('BaseTemplate');
-
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
       <div className="mx-auto max-w-screen-md">
@@ -17,7 +13,6 @@ const BaseTemplate = (props: {
             <h1 className="text-3xl font-bold text-gray-900">
               {AppConfig.name}
             </h1>
-            <h2 className="text-xl">{t('description')}</h2>
           </div>
 
           <div className="flex justify-between">
@@ -39,7 +34,6 @@ const BaseTemplate = (props: {
 
         <footer className="border-t border-gray-300 py-8 text-center text-sm">
           © Copyright {new Date().getFullYear()} {AppConfig.name}.
-          {` ${t('made_with')} `}
           <a
             href="https://creativedesignsguru.com"
             className="text-blue-700 hover:border-b-2 hover:border-blue-700"
